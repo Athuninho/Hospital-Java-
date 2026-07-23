@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="768.0" prefWidth="1024.0" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.hms.controller.MainController">
+   <left>
+      <VBox prefHeight="768.0" prefWidth="220.0" spacing="10.0" styleClass="sidebar" BorderPane.alignment="CENTER">
+         <children>
+            <Label alignment="CENTER" prefHeight="60.0" prefWidth="220.0" styleClass="logo-label" text="HMS" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+            <Button mnemonicParsing="false" onAction="#showDashboard" prefHeight="45.0" prefWidth="220.0" styleClass="nav-button" text="Dashboard" />
+            <Button mnemonicParsing="false" onAction="#showPatients" prefHeight="45.0" prefWidth="220.0" styleClass="nav-button" text="Patients" />
+            <Button mnemonicParsing="false" onAction="#showDoctors" prefHeight="45.0" prefWidth="220.0" styleClass="nav-button" text="Doctors" />
+            <Button mnemonicParsing="false" onAction="#showAppointments" prefHeight="45.0" prefWidth="220.0" styleClass="nav-button" text="Appointments" />
+            <Button mnemonicParsing="false" onAction="#showBilling" prefHeight="45.0" prefWidth="220.0" styleClass="nav-button" text="Billing" />
+            <Button mnemonicParsing="false" onAction="#showMedicalHistory" prefHeight="45.0" prefWidth="220.0" styleClass="nav-button" text="Medical History" />
+         </children>
+         <padding>
+            <Insets top="20.0" />
+         </padding>
+      </VBox>
+   </left>
+   <center>
+      <StackPane fx:id="contentArea" prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+   </center>
+</BorderPane>

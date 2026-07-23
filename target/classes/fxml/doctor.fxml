@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="768.0" prefWidth="804.0" spacing="15.0" styleClass="content-pane" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.hms.controller.DoctorController">
+   <children>
+      <Label styleClass="header-label" text="Doctor Scheduling &amp; Profiles">
+         <font>
+            <Font name="System Bold" size="28.0" />
+         </font>
+      </Label>
+      <HBox spacing="20.0" VBox.vgrow="ALWAYS">
+         <children>
+            <!-- Form Section -->
+            <VBox prefWidth="350.0" spacing="10.0" style="-fx-background-color: white; -fx-padding: 15; -fx-background-radius: 8;">
+               <children>
+                  <Label text="Doctor Details" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+                  
+                  <GridPane hgap="10" vgap="10">
+                      <columnConstraints>
+                          <ColumnConstraints hgrow="SOMETIMES" minWidth="100.0" />
+                          <ColumnConstraints hgrow="ALWAYS" />
+                      </columnConstraints>
+                      
+                      <Label text="Name:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                      <TextField fx:id="nameField" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                      
+                      <Label text="Specialty:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                      <TextField fx:id="specializationField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                      
+                      <Label text="Contact:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                      <TextField fx:id="contactField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                      
+                      <Label text="Fee ($):" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                      <TextField fx:id="feeField" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                      
+                      <Label text="Avail. Days:" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+                      <TextField fx:id="daysField" promptText="e.g. Mon, Wed, Fri" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                      
+                      <Label text="Avail. Hours:" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+                      <TextField fx:id="hoursField" promptText="e.g. 09:00 - 14:00" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                  </GridPane>
+                  
+                  <HBox spacing="10.0" alignment="CENTER_RIGHT">
+                      <Button mnemonicParsing="false" onAction="#clearFields" text="Clear" />
+                      <Button mnemonicParsing="false" onAction="#handleDelete" styleClass="delete-button" text="Delete" />
+                      <Button mnemonicParsing="false" onAction="#handleSave" styleClass="action-button" text="Save" />
+                  </HBox>
+               </children>
+            </VBox>
+            
+            <!-- Table Section -->
+            <VBox HBox.hgrow="ALWAYS" spacing="10.0" style="-fx-background-color: white; -fx-padding: 15; -fx-background-radius: 8;">
+               <children>
+                  <TableView fx:id="doctorTable" VBox.vgrow="ALWAYS">
+                    <columns>
+                      <TableColumn fx:id="idCol" prefWidth="40.0" text="ID" />
+                      <TableColumn fx:id="nameCol" prefWidth="120.0" text="Name" />
+                      <TableColumn fx:id="specializationCol" prefWidth="100.0" text="Specialty" />
+                      <TableColumn fx:id="feeCol" prefWidth="60.0" text="Fee" />
+                      <TableColumn fx:id="daysCol" prefWidth="90.0" text="Days" />
+                      <TableColumn fx:id="hoursCol" prefWidth="90.0" text="Hours" />
+                    </columns>
+                  </TableView>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </children>
+   <padding>
+      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+   </padding>
+</VBox>
